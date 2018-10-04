@@ -8,9 +8,9 @@ import org.springframework.context.annotation.ImportResource;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
-@ComponentScan(basePackages = "web.adminlicense")
+@ComponentScan(basePackages = "web.adminlicense.*")
 @EnableJpaRepositories(basePackages = "web.adminlicense.repositories")
-@EntityScan(basePackages = "web.licserver.models")
+@EntityScan(basePackages = "web.adminlicense.models")
 @ImportResource("classpath:spring-context.xml")
 public class AdminLicenseApplication {
 

@@ -1,4 +1,4 @@
-package web.adminlicense;
+package web.adminlicense.app;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

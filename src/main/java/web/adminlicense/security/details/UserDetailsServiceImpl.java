@@ -4,11 +4,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Service;
 import web.adminlicense.models.User;
 import web.adminlicense.repositories.UserRepository;
 
 import java.util.Optional;
-
 
 public class UserDetailsServiceImpl implements UserDetailsService {
 
@@ -20,7 +20,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!login: " + login);
         Optional<User> candidate = userRepository.findByName(login);
         if (!candidate.isPresent()){
-            throw new UsernameNotFoundException("User not authorized.");
+            throw new UsernameNotFoundException("User: " + login + " - not authorized.");
         }
         return new UserDetailsImpl(candidate.get());
     }

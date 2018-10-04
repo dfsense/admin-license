@@ -2,7 +2,7 @@ package web.adminlicense.models;
 
 
 import lombok.Data;
-
+import javax.persistence.Entity;
 import javax.persistence.*;
 import java.util.Set;
 
